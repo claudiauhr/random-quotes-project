@@ -1,4 +1,4 @@
-const settings = {
+const urlApi = {
 	"async": true,
 	"crossDomain": true,
 	"url": "https://quotes15.p.rapidapi.com/quotes/random/",
@@ -9,6 +9,7 @@ const settings = {
 	}
 };
 
-$.ajax(settings).done(function (response) {
-	console.log(response);
+$.ajax(urlApi).then(
+	function (response) {
+		console.log(response);
 });
