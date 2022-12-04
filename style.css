@@ -14,10 +14,17 @@ body {
     min-height: 100vh;
     background: #f08080;
 }
-
+button {
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+}
 span {
     text-align: right;
     font: italic;
+}
+div.click {
+    text-align: right;
 }
 .name {
     font-weight: initial;
