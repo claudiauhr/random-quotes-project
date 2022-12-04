@@ -1,26 +1,11 @@
-//My API:
-/* const URL_API = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://quotes15.p.rapidapi.com/quotes/random/",
-	"method": "GET",
-	"headers": {
-		"X-RapidAPI-Key": "4aa0eb5f6cmshbe14b648260d98dp1d00fejsnf69b780da815",
-		"X-RapidAPI-Host": "quotes15.p.rapidapi.com"
-	}
-};
-
-$.ajax(URL_API).then(
-	function (data) {
-		console.log(data);
-});
- */
-
 //IPO - INPUT -> PROCESS -> OUTPUT
 
 //CONSTANTS AND VARIABLES
 let $randomQuote = undefined; 
+const $section = $('section');
+const $btn = $('button');
 
+//My API:
 const URL_API = {
 	"async": false,
 	"crossDomain": true,
@@ -32,28 +17,33 @@ const URL_API = {
 	}
 };
 
-// $.ajax(URL_API).then(
-// 	function (data) {
-// 		$randomQuote = data.content
-// });
-
-// console.log($randomQuote);
-
 //CACHE DOM ELEMENTS REFERENCE
 
 //REGISTER EVENT LISTENERS
+$btn.on('click', getData);
 
 //FUNCTIONS
 function getData() {
-	$.ajax(URL_API)
+	$.ajax(URL_API)	
 	.then(function (data) {
-		console.log(data);
-		return data					//i took .content from "return data"
+		render(data);
 	}, function(error) {
-		return 
+		console.log(error);
 	});
 }
-// function renderData()
+
+function render(quoteResults) {
+	// $section.remove($quoteArea);
+	const $quoteArea = `
+		<blockquote>
+			<p class="quotation">${quoteResults.content}</p>
+		</blockquote> 
+		<div class="author">
+			<p class="name">__ ${quoteResults.originator.name}</p>
+		</div>`;
+	$section.append($quoteArea);
+	return
+}
 
 
 //PSEUDOCODE -> Steps that I need to be performed
@@ -68,4 +58,4 @@ function getData() {
 4) Loop over the list of quotes objects and generate an html card for each object.
 
 */
-// 2:20hr Week 3 Day 3
+

@@ -19,6 +19,11 @@ span {
     text-align: right;
     font: italic;
 }
+.name {
+    font-weight: initial;
+    font-style: italic;
+
+}
 .card {
     width: 600px;
     background-color: aliceblue;
@@ -31,9 +36,9 @@ span {
     /* quotes: "\201C""\201D""\2018""\2019"; */
     padding: 10px 20px;
     line-height: 1.4;
-  }
+}
   
-  .quotation:before {
+.quotation:before {
     content: open-quote;
     display: inline;
     height: 0;
@@ -43,8 +48,8 @@ span {
     top: 30px;
     color: lightgrey;
     font-size: 3em;
-  }
-  .quotation:after {
+}
+.quotation:after {
     content: close-quote;
     display: inline;
     height: 0;
@@ -54,8 +59,8 @@ span {
     top: 35px;
     color: lightgray;
     font-size: 3em;
-  }
-  .name {
+}
+.name {
     font-size: 20px;
     text-align: right;
-  }
+}
