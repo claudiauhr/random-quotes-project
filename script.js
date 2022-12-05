@@ -4,6 +4,8 @@
 let $randomQuote = undefined; 
 const $section = $('section');
 const $btn = $('button');
+const $quotation = $('.quotation');
+const $name = $('.name');
 
 //My API:
 const URL_API = {
@@ -26,24 +28,18 @@ $btn.on('click', getData);
 function getData() {
 	$.ajax(URL_API)	
 	.then(function (data) {
+		console.log(URL_API);
 		render(data);
 	}, function(error) {
 		console.log(error);
 	});
 }
-
-function render(quoteResults) {
-	// $section.remove($quoteArea);
-	const $quoteArea = `
-		<blockquote>
-			<p class="quotation">${quoteResults.content}</p>
-		</blockquote> 
-		<div class="author">
-			<p class="name">__ ${quoteResults.originator.name}</p>
-		</div>`;
-	$section.append($quoteArea);
-	return
+function render (data) {
+	$quotation.text(data.content)
+	$name.text(data.originator.name)
 }
+
+
 
 
 //PSEUDOCODE -> Steps that I need to be performed
@@ -57,5 +53,24 @@ function render(quoteResults) {
 
 4) Loop over the list of quotes objects and generate an html card for each object.
 
+5) Clean quote area to a new quote text.
+
 */
 
+
+
+/* function render(quoteResults) {
+	const $quoteArea = `
+		<blockquote>
+			<p class="quotation">${quoteResults.content}</p>
+		</blockquote> 
+		<div class="author">
+			<p class="name">__ ${quoteResults.originator.name}</p>
+		</div>`;
+	$section.append($quoteArea);
+	if ($quoteArea !== '') {
+		$quoteArea.remove();
+
+	}
+	return
+} */
