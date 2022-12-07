@@ -23,6 +23,7 @@ A simple web-based application to present random quotes to user on a button clic
 
 ## Future Enhancements
 
-- Adding a feature that when a new quote is generate change bacckground color and button color.
+- Adding a query media for mobile users.
+- Adding a feature that when a new quote is generate change background color and button color.
 - Adding a drop list that allows user to choose quotes by type.
 - Adding a feature that allows users to choose by author.

@@ -1,8 +1,6 @@
 //IPO - INPUT -> PROCESS -> OUTPUT
 
 //CONSTANTS AND VARIABLES
-let $randomQuote = undefined; 
-const $section = $('section');
 const $btn = $('button');
 const $quotation = $('.quotation');
 const $name = $('.name');
@@ -28,7 +26,7 @@ $btn.on('click', getData);
 function getData() {
 	$.ajax(URL_API)	
 	.then(function (data) {
-		console.log(URL_API);
+		// console.log(URL_API);
 		render(data);
 	}, function(error) {
 		console.log(error);
