@@ -39,6 +39,8 @@ function render (data) {
 	$name.text(data.originator.name)
 }
 
+$(document).ready(getData)
+
 
 
 
@@ -56,21 +58,3 @@ function render (data) {
 5) Clean quote area to a new quote text.
 
 */
-
-
-
-/* function render(quoteResults) {
-	const $quoteArea = `
-		<blockquote>
-			<p class="quotation">${quoteResults.content}</p>
-		</blockquote> 
-		<div class="author">
-			<p class="name">__ ${quoteResults.originator.name}</p>
-		</div>`;
-	$section.append($quoteArea);
-	if ($quoteArea !== '') {
-		$quoteArea.remove();
-
-	}
-	return
-} */
